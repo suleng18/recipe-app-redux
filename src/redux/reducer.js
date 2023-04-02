@@ -7,6 +7,7 @@ const initialState = {
 };
 
 const recipeReducer = (state = initialState, action) => {
+  console.log('reducer');
   switch (action.type) {
     case types.FETCH_RECIPE_START:
       return {
@@ -21,7 +22,7 @@ const recipeReducer = (state = initialState, action) => {
         recipes: action.payload,
       };
 
-    case types.FETCH_RECIPE_ERROR:
+    case types.FETCH_RECIPE_FAIL:
       return {
         ...state,
         loading: false,
